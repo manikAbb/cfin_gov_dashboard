@@ -1,6 +1,39 @@
 <mvc:View controllerName="cfin.custom.zblocklistgovern.controller.ZView1"
     xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core"
     xmlns="sap.m">
     <Page id="page" title="{i18n>title}">
+    <IconTabBar
+		id="idIconTabBar"
+		select=".onFilterSelect"
+		class="sapUiResponsiveContentPadding">
+		<items>
+			<IconTabFilter
+				icon="sap-icon://home"
+				count="0"
+				text="{i18n>xtit.Dashboard}"
+				key="Ok" >
+                <content>
+                    <VBox class="sapUiSmallMargin">
+                         <core:Fragment fragmentName="cfin.custom.zblocklistgovern.view.fragments.dashboard.ZTileDisplay" type="XML"/>		
+                         <core:Fragment fragmentName="cfin.custom.zblocklistgovern.view.fragments.dashboard.ZRefreshDashboard" type="XML"/>		
+						 <core:Fragment fragmentName="cfin.custom.zblocklistgovern.view.fragments.dashboard.ZMappingFieldTable" type="XML"/>		
+
+                    </VBox>
+                </content>
+            </IconTabFilter>
+
+			<IconTabFilter
+				icon="sap-icon://compare"
+				count="0"
+				text="Heavy"
+				key="Heavy" />
+			<IconTabFilter
+				icon="sap-icon://inventory"
+				count="0"
+				text="Overweight"
+				key="Overweight" />
+		</items>
+    </IconTabBar>
     </Page>
 </mvc:View>
