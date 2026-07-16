@@ -47,11 +47,11 @@
         </VBox>
         </HBox>
         <HBox class="sapUiSmallMargin">
-        <Button text="Search" icon="sap-icon://search" press=".onMyReqSearch" type="Emphasized" class="sapUiSmallMarginEnd"/>
-        <Button text="Today" icon="sap-icon://appointment-2" press=".onMyReqFilterToday" class="sapUiSmallMarginEnd"/>
-        <Button text="Last 7 Days" icon="sap-icon://appointment-2" press=".onMyReqFilterLast7" class="sapUiSmallMarginEnd"/>
-        <Button text="Last 30 Days" icon="sap-icon://appointment-2" press=".onMyReqFilterLast30" class="sapUiSmallMarginEnd"/>
-        <Button text="Clear" icon="sap-icon://clear-filter" press=".onMyReqClear"/>
+        <Button text="{i18n>xbut.Search}" icon="sap-icon://search" press=".onMyReqSearch" type="Emphasized" class="sapUiSmallMarginEnd"/>
+        <Button text="{i18n>xbut.Today}" icon="sap-icon://appointment-2" press=".onMyReqFilterToday" class="sapUiSmallMarginEnd"/>
+        <Button text="{i18n>xbut.Last7Days}" icon="sap-icon://appointment-2" press=".onMyReqFilterLast7" class="sapUiSmallMarginEnd"/>
+        <Button text="{i18n>xbut.Last30Days}" icon="sap-icon://appointment-2" press=".onMyReqFilterLast30" class="sapUiSmallMarginEnd"/>
+        <Button text="{i18n>xbut.Clear}" icon="sap-icon://clear-filter" press=".onMyReqClear"/>
     </HBox>
 </Panel>
   

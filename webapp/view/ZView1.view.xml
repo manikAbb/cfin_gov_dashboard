@@ -33,7 +33,7 @@
 					  <VBox class="sapUiSmallMargin">
 					  	  <core:Fragment fragmentName="cfin.custom.zblocklistgovern.view.fragments.myrequests.ZFilterbar" type="XML"/>	
                   		  <core:Fragment fragmentName="cfin.custom.zblocklistgovern.view.fragments.myrequests.ZRefreshDashboard" type="XML"/>	
-				
+						  <core:Fragment fragmentName="cfin.custom.zblocklistgovern.view.fragments.myrequests.ZMyRequestsTable" type="XML"/>	
                     </VBox>
 					
 				</content>

@@ -7,7 +7,7 @@
                         smartFilterId=""
                         useExportToExcel="true"
                         useTablePersonalisation="true"
-                        header="{i18n>tblHeader}"
+                        header="{i18n>xtit.tblHeader}"
                         placeToolbarInTable="true"
                         tableType="ResponsiveTable"
                         showRowCount="true"
@@ -32,25 +32,61 @@
                                     <customData>
                                         <core:CustomData key="p13nData" value='\{"columnKey": "DocumentNo","columnIndex":"1", "autoColumnWidth":"true", "leadingProperty": "DocumentNo", "sortProperty": "DocumentNo", "additionalProperty": "Key,DocAttached,Message,ArrearsInDaya"}' />
                                     </customData>
-                                   <Text text="{i18n>xtit.Field}"/>
+                                   <Text text="{i18n>xtit.RequestId}"/>
                                 </Column>
                                 <Column >
                                     <customData>
                                         <core:CustomData key="p13nData" value='\{"columnKey": "ProfitCenter", "autoColumnWidth": true, "columnIndex":"2",  "leadingProperty": "ProfitCenter", "sortProperty": "ProfitCenter"}' />
                                     </customData>
-                                    <Text text="{i18n>xtit.TotalMappungs}"/>
+                                    <Text text="{i18n>xtit.Field}"/>
                                 </Column>
                                  <Column >
                                     <customData>
                                         <core:CustomData key="p13nData" value='\{"columnKey": "CompanyCode", "autoColumnWidth": true, "columnIndex":"3",  "leadingProperty": "CompanyCode", "sortProperty": "CompanyCode"}' />
                                     </customData>
-                                   <Text text="{i18n>xtit.PendingRequests}"/>
+                                   <Text text="{i18n>xtit.TargetSystem}"/>
                                 </Column>
                                 <Column >
                                     <customData>
                                         <core:CustomData key="p13nData" value='\{"columnKey": "CompanyCode", "autoColumnWidth": true, "columnIndex":"4",  "leadingProperty": "CompanyCode", "sortProperty": "CompanyCode"}' />
                                     </customData>
-                                   <Text text="{i18n>xtit.TargetSystem}"/>
+                                   <Text text="{i18n>xtit.InternalCode}"/>
+                                </Column>
+                                <Column >
+                                    <customData>
+                                        <core:CustomData key="p13nData" value='\{"columnKey": "CompanyCode", "autoColumnWidth": true, "columnIndex":"4",  "leadingProperty": "CompanyCode", "sortProperty": "CompanyCode"}' />
+                                    </customData>
+                                   <Text text="{i18n>xtit.ExternalCode}"/>
+                                </Column>
+                                 <Column >
+                                    <customData>
+                                        <core:CustomData key="p13nData" value='\{"columnKey": "CompanyCode", "autoColumnWidth": true, "columnIndex":"5",  "leadingProperty": "CompanyCode", "sortProperty": "CompanyCode"}' />
+                                    </customData>
+                                   <Text text="{i18n>xtit.Action}"/>
+                                </Column>
+                                 <Column >
+                                    <customData>
+                                        <core:CustomData key="p13nData" value='\{"columnKey": "CompanyCode", "autoColumnWidth": true, "columnIndex":"6",  "leadingProperty": "CompanyCode", "sortProperty": "CompanyCode"}' />
+                                    </customData>
+                                   <Text text="{i18n>xtit.Date}"/>
+                                </Column>
+                                 <Column >
+                                    <customData>
+                                        <core:CustomData key="p13nData" value='\{"columnKey": "CompanyCode", "autoColumnWidth": true, "columnIndex":"7",  "leadingProperty": "CompanyCode", "sortProperty": "CompanyCode"}' />
+                                    </customData>
+                                   <Text text="{i18n>xtit.Status}"/>
+                                </Column>
+                                 <Column >
+                                    <customData>
+                                        <core:CustomData key="p13nData" value='\{"columnKey": "CompanyCode", "autoColumnWidth": true, "columnIndex":"8",  "leadingProperty": "CompanyCode", "sortProperty": "CompanyCode"}' />
+                                    </customData>
+                                   <Text text="{i18n>xtit.Comments}"/>
+                                </Column>
+                                 <Column >
+                                    <customData>
+                                        <core:CustomData key="p13nData" value='\{"columnKey": "CompanyCode", "autoColumnWidth": true, "columnIndex":"9",  "leadingProperty": "CompanyCode", "sortProperty": "CompanyCode"}' />
+                                    </customData>
+                                   <Text text="{i18n>xtit.Actions}"/>
                                 </Column>
                            
                             </columns>
