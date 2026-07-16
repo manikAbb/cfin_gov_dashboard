@@ -16,7 +16,7 @@
                 <content>
                     <VBox class="sapUiSmallMargin">
                         
-						 <core:Fragment fragmentName="cfin.custom.zblocklistgovern.view.fragments.dashboard.ZTileDisplay" type="XML"/>		
+						
                          <core:Fragment fragmentName="cfin.custom.zblocklistgovern.view.fragments.dashboard.ZRefreshDashboard" type="XML"/>		
 						 <core:Fragment fragmentName="cfin.custom.zblocklistgovern.view.fragments.dashboard.ZMappingFieldTable" type="XML"/>		
 
