@@ -1,0 +1,98 @@
+{
+  "_version": "1.86.0",
+  "sap.app": {
+    "id": "cfin.custom.zblocklistgovern",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:basic",
+      "version": "1.28.0",
+      "toolsId": "e1d76ef2-15c2-4b8a-aa88-7e67f26aa95e"
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": true,
+    "dependencies": {
+      "minUI5Version": "1.150.0",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "cfin.custom.zblocklistgovern.i18n.i18n"
+        }
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "controlAggregation": "pages",
+        "controlId": "app",
+        "transition": "slide",
+        "type": "View",
+        "viewType": "XML",
+        "path": "cfin.custom.zblocklistgovern.view",
+        "async": true,
+        "viewPath": "cfin.custom.zblocklistgovern.view"
+      },
+      "routes": [
+        {
+          "name": "RouteZView1",
+          "pattern": ":?query:",
+          "target": [
+            "TargetZView1"
+          ]
+        }
+      ],
+      "targets": {
+        "TargetZView1": {
+          "id": "ZView1",
+          "name": "ZView1"
+        }
+      }
+    },
+    "rootView": {
+      "viewName": "cfin.custom.zblocklistgovern.view.App",
+      "type": "XML",
+      "id": "App",
+      "async": true
+    }
+  }
+}
