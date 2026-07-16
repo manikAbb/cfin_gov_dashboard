@@ -1,0 +1,58 @@
+<core:FragmentDefinition xmlns:html="http://www.w3.org/1999/xhtml" xmlns:smartForm="sap.ui.comp.smartform" xmlns:smartField="sap.ui.comp.smartfield" xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns="sap.m" xmlns:core="sap.ui.core">
+
+<Panel headerText="Filters" class="sapUiSmallMarginBottom">
+    <HBox wrap="Wrap" alignItems="End" class="sapUiSmallMargin">
+        <VBox class="sapUiSmallMarginEnd">
+            <Label text="{i18n>xtit.Field}" labelFor="myReqFilterField"/>
+            <Input id="myReqFilterField" placeholder="{i18n>xtit.Field}" width="150px" liveChange=".onMyReqFilterLiveChange" submit=".onMyReqSearch"/>
+        </VBox>
+        <VBox class="sapUiSmallMarginEnd">
+            <Label text="{i18n>xtit.TargetSystem}" labelFor="myReqFilterTarget"/>
+            <Input id="myReqFilterTarget" placeholder="{i18n>xtit.TargetSystem}" width="150px" liveChange=".onMyReqFilterLiveChange" submit=".onMyReqSearch"/>
+        </VBox>
+        <VBox class="sapUiSmallMarginEnd">
+            <Label text="{i18n>xtit.InternalCode}" labelFor="myReqFilterIntCode"/>
+            <Input id="myReqFilterIntCode" placeholder="{i18n>xtit.InternalCode}" width="130px" liveChange=".onMyReqFilterLiveChange" submit=".onMyReqSearch"/>
+        </VBox>
+        <VBox class="sapUiSmallMarginEnd">
+            <Label text="{i18n>xtit.Action}"/>
+            <Select id="myReqFilterAction" width="120px" change=".onMyReqSearch">
+            <items>
+            <core:Item key="" text="All Actions"/>
+            <core:Item key="CREATE" text="Create"/>
+            <core:Item key="UPDATE" text="Update"/>
+            <core:Item key="DELETE" text="Delete"/>
+            </items>
+            </Select>
+        </VBox>
+        <VBox class="sapUiSmallMarginEnd">
+            <Label text="{i18n>xtit.Status}"/>
+            <Select id="myReqFilterStatus" width="130px" change=".onMyReqSearch">
+            <items>
+            <core:Item key="" text="All Statuses"/>
+            <core:Item key="PENDING" text="Pending"/>
+            <core:Item key="APPROVED" text="Approved"/>
+            <core:Item key="REJECTED" text="Rejected"/>
+            <core:Item key="WITHDRAWN" text="Withdrawn"/>
+            </items>
+            </Select>
+        </VBox>
+        <VBox class="sapUiSmallMarginEnd">
+            <Label text="{i18n>xtit.DateFrom}" labelFor="myReqDateFrom"/>
+            <DatePicker id="myReqDateFrom" placeholder="From date" valueFormat="yyyy-MM-dd" displayFormat="dd/MM/yyyy" width="130px" change=".onMyReqSearch"/>
+        </VBox>
+        <VBox class="sapUiSmallMarginEnd">
+            <Label text="{i18n>xtit.DateTo}" labelFor="myReqDateTo"/>
+            <DatePicker id="myReqDateTo" placeholder="To date" valueFormat="yyyy-MM-dd" displayFormat="dd/MM/yyyy" width="130px" change=".onMyReqSearch"/>
+        </VBox>
+        </HBox>
+        <HBox class="sapUiSmallMargin">
+        <Button text="Search" icon="sap-icon://search" press=".onMyReqSearch" type="Emphasized" class="sapUiSmallMarginEnd"/>
+        <Button text="Today" icon="sap-icon://appointment-2" press=".onMyReqFilterToday" class="sapUiSmallMarginEnd"/>
+        <Button text="Last 7 Days" icon="sap-icon://appointment-2" press=".onMyReqFilterLast7" class="sapUiSmallMarginEnd"/>
+        <Button text="Last 30 Days" icon="sap-icon://appointment-2" press=".onMyReqFilterLast30" class="sapUiSmallMarginEnd"/>
+        <Button text="Clear" icon="sap-icon://clear-filter" press=".onMyReqClear"/>
+    </HBox>
+</Panel>
+  
+</core:FragmentDefinition>

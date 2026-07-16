@@ -12,10 +12,11 @@
 				icon="sap-icon://home"
 				count="0"
 				text="{i18n>xtit.Dashboard}"
-				key="Ok" >
+				key="0" >
                 <content>
                     <VBox class="sapUiSmallMargin">
-                         <core:Fragment fragmentName="cfin.custom.zblocklistgovern.view.fragments.dashboard.ZTileDisplay" type="XML"/>		
+                        
+						 <core:Fragment fragmentName="cfin.custom.zblocklistgovern.view.fragments.dashboard.ZTileDisplay" type="XML"/>		
                          <core:Fragment fragmentName="cfin.custom.zblocklistgovern.view.fragments.dashboard.ZRefreshDashboard" type="XML"/>		
 						 <core:Fragment fragmentName="cfin.custom.zblocklistgovern.view.fragments.dashboard.ZMappingFieldTable" type="XML"/>		
 
@@ -24,15 +25,20 @@
             </IconTabFilter>
 
 			<IconTabFilter
-				icon="sap-icon://compare"
+				icon="sap-icon://request"
 				count="0"
-				text="Heavy"
-				key="Heavy" />
-			<IconTabFilter
-				icon="sap-icon://inventory"
-				count="0"
-				text="Overweight"
-				key="Overweight" />
+				text="{i18n>xtit.MyRequests}"
+				key="1" >
+				<content>
+					  <VBox class="sapUiSmallMargin">
+					  	  <core:Fragment fragmentName="cfin.custom.zblocklistgovern.view.fragments.myrequests.ZFilterbar" type="XML"/>	
+                  		  <core:Fragment fragmentName="cfin.custom.zblocklistgovern.view.fragments.myrequests.ZRefreshDashboard" type="XML"/>	
+				
+                    </VBox>
+					
+				</content>
+			</IconTabFilter>
+			
 		</items>
     </IconTabBar>
     </Page>

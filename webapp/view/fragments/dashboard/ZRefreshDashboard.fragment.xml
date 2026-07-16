@@ -2,7 +2,7 @@
 
 <Toolbar >
 <ToolbarSpacer/>
-    <Button text="Refresh Dashboard" icon="sap-icon://refresh" press=".onRefreshDashboard" type="Emphasized"/>
+    <Button text="{i18n>xtit.RefreshDashboard}" icon="sap-icon://refresh" press=".onRefreshDashboard" type="Emphasized"/>
 </Toolbar>
 
   

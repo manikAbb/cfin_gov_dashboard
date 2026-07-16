@@ -1,0 +1,12 @@
+<core:FragmentDefinition xmlns:html="http://www.w3.org/1999/xhtml" xmlns:smartForm="sap.ui.comp.smartform" xmlns:smartField="sap.ui.comp.smartfield" xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns="sap.m" xmlns:core="sap.ui.core">
+
+<Toolbar>
+    <Title text="{i18n>xtit.MySubmittedRequests}" level="H4"/>
+    <ToolbarSpacer/>
+    <Button text="{i18n>xtit.Refresh}" icon="sap-icon://refresh" press=".onRefreshMyRequests"/>
+    <!--  ── Column Toggle ──  -->
+    <Button icon="sap-icon://table-column" tooltip="Show/Hide Columns" press=".onToggleMyRequestColumns"/>
+    <Button text="{i18n>xtit.ExportCSV}" icon="sap-icon://download" press=".onExportMyRequests"/>
+</Toolbar>
+  
+</core:FragmentDefinition>
