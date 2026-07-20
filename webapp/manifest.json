@@ -18,7 +18,7 @@
     "dataSources": {
      
       "mainService": {
-        "uri": "/sap/opu/odata/sap/ZFITR_EXP_HEDGE_POSITION_SRV/",
+        "uri": "/sap/opu/odata/sap/ZCF_DISPUTE_PROCESSOR_APPR_APP_SRV/",
         "type": "OData",
         "settings": {
           "localUri": "localService/mainService/metadata.xml",

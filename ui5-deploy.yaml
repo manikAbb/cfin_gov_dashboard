@@ -19,8 +19,8 @@ builder:
           client: '100'
         app:
           name: ZBLOCKLISTGOV
-          package: $TMP
-          transport: ''
+          package: ZCFIN_FIORI
+          transport: CF2K958646
         exclude:
           - /test/
           - /localService/
