@@ -24,9 +24,9 @@
 
 			<IconTabFilter
 				icon="sap-icon://request"
-				count="0"
 				text="{i18n>xtit.MyRequests}"
-				key="1" >
+				key="1" 
+				visible="false">
 				<content>
 					  <VBox class="sapUiSmallMargin">
 					  	  <core:Fragment fragmentName="cfin.custom.zblocklistgovern.view.fragments.myrequests.ZFilterbar" type="XML"/>	

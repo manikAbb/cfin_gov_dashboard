@@ -3,19 +3,19 @@
 <Panel headerText="{i18n>xtit.MappingField}" class="sapUiSmallMarginTop" expandable="true" expanded="true">
 
                         <smartTable:SmartTable
-                        entitySet=""
+                        entitySet="Myrequest_DetSet"
                         smartFilterId=""
                         useExportToExcel="true"
                         useTablePersonalisation="true"
-                        header="{i18n>tblHeader}"
+                        header="{i18n>xtit.tblHeader}"
                         placeToolbarInTable="true"
                         tableType="ResponsiveTable"
                         showRowCount="true"
-                        enableAutoBinding="false"
                         class="sapUiResponsiveContentPadding"
                         demandPopin="true"
                         displayInline="false"
                         useVariantManagement="true"
+                        enableAutoBinding="true"
                         persistencyKey="badDebtTablePersKey"
                        
                     >
@@ -30,41 +30,43 @@
                             <columns>
                                 <Column>
                                     <customData>
-                                        <core:CustomData key="p13nData" value='\{"columnKey": "DocumentNo","columnIndex":"1", "autoColumnWidth":"true", "leadingProperty": "DocumentNo", "sortProperty": "DocumentNo", "additionalProperty": "Key,DocAttached,Message,ArrearsInDaya"}' />
+                                        <core:CustomData key="p13nData" value='\{"columnKey": "Zrule","columnIndex":"1", "autoColumnWidth":"Zrule", "leadingProperty": "Zrule", "sortProperty": "Zrule", "filterProperty": "Zrule"}' />
                                     </customData>
-                                   <Text text="{i18n>xtit.Field}"/>
+                                   <Text text="{i18n>xtit.Zrule}"/>
                                 </Column>
                                 <Column >
                                     <customData>
-                                        <core:CustomData key="p13nData" value='\{"columnKey": "ProfitCenter", "autoColumnWidth": true, "columnIndex":"2",  "leadingProperty": "ProfitCenter", "sortProperty": "ProfitCenter"}' />
+                                        <core:CustomData key="p13nData" value='\{"columnKey": "Bukrs", "autoColumnWidth": true, "columnIndex":"2",  "leadingProperty": "Bukrs", "sortProperty": "Bukrs", "filterProperty": "Bukrs"}' />
                                     </customData>
-                                    <Text text="{i18n>xtit.TotalMappungs}"/>
+                                    <Text text="{i18n>xtit.Bukrs}"/>
                                 </Column>
                                  <Column >
                                     <customData>
-                                        <core:CustomData key="p13nData" value='\{"columnKey": "CompanyCode", "autoColumnWidth": true, "columnIndex":"3",  "leadingProperty": "CompanyCode", "sortProperty": "CompanyCode"}' />
+                                        <core:CustomData key="p13nData" value='\{"columnKey": "Partner", "autoColumnWidth": true, "columnIndex":"3",  "leadingProperty": "Partner", "sortProperty": "Partner", "filterProperty": "Partner"}' />
                                     </customData>
-                                   <Text text="{i18n>xtit.PendingRequests}"/>
+                                    <Text text="{i18n>xtit.Partner}"/>
                                 </Column>
-                                <Column >
+                               <Column >
                                     <customData>
-                                        <core:CustomData key="p13nData" value='\{"columnKey": "CompanyCode", "autoColumnWidth": true, "columnIndex":"4",  "leadingProperty": "CompanyCode", "sortProperty": "CompanyCode"}' />
+                                        <core:CustomData key="p13nData" value='\{"columnKey": "ReasonCode", "autoColumnWidth": true, "columnIndex":"4",  "leadingProperty": "ReasonCode", "sortProperty": "ReasonCode", "filterProperty": "ReasonCode"}' />
                                     </customData>
-                                   <Text text="{i18n>xtit.TargetSystem}"/>
+                                    <Text text="{i18n>xtit.ReasonCode}"/>
                                 </Column>
                            
                             </columns>
                             <items>
                                 <ColumnListItem  vAlign="Middle">
-                                        
                                         <cells>
-                                            <Text  text="{ProfitCenter}" />
+                                            <Text  text="{Zrule}" />
                                         </cells>
                                         <cells>
-                                         <Text text="{CompanyCode}" />
+                                            <Text  text="{Bukrs}" />
                                         </cells>
                                         <cells>
-                                            <Text text="{CustomerAccount}" />
+                                         <Text text="{Partner}" />
+                                        </cells>
+                                        <cells>
+                                            <Text text="{ReasonCode}" />
                                         </cells>
                                        
                                 </ColumnListItem>
