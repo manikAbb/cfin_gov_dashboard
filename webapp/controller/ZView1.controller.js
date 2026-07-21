@@ -18,6 +18,7 @@ sap.ui.define([
         },
         _onRouteMatched:function(){
             console.log("Route Matched");
+            BusyIndicator.show(0);
             this._oDataModel.read("/myrequest_CountSet", {
                 success: function(oData, oResponse){
                     if(oData.results.length > 0){
@@ -25,8 +26,12 @@ sap.ui.define([
                         this._oMainModel.setProperty("/aCountApprovedReq", oData.results[0].ApprovedReq);
                         this._oMainModel.setProperty("/aCountRejectReq", oData.results[0].RejectedReq);
                     }
-                    console.log(oData,"Data Read Success");       
-                }.bind(this)
+                    BusyIndicator.hide();
+                }.bind(this),
+                error: function(oError){            
+                    MessageBox.error(oError.message);
+                    BusyIndicator.hide();
+                }
             });
         },
         onPressSendForApproval:function(oEvent){
