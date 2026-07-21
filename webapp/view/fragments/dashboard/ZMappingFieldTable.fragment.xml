@@ -27,7 +27,7 @@
                                 <Button icon="sap-icon://validate" text="{i18n>xtit.SendForApproval}" type="Emphasized" press="onPressSendForApproval" enabled="true" />
                             </Toolbar>
                         </smartTable:customToolbar>
-                        <Table id="idMappingTable"  class="sapUiTinyMarginTop" mode="Multiple" selectionChange="onItemSelect" growing="true" growingScrollToLoad="true" updateFinished="onTableCheckBoxEnable" sticky="ColumnHeaders,HeaderToolbar" selectAll="onSelectAll">
+                        <Table id="idMappingTable"  class="sapUiTinyMarginTop" mode="MultiSelect" selectionChange="onItemSelect" growing="true" growingScrollToLoad="true" updateFinished="onTableCheckBoxEnable" sticky="ColumnHeaders,HeaderToolbar" selectAll="onSelectAll">
                             <columns>
                                 <Column>
                                     <customData>
