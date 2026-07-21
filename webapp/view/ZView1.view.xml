@@ -16,7 +16,6 @@
                 <content>
                     <VBox class="sapUiSmallMargin">
 						 <core:Fragment fragmentName="cfin.custom.zblocklistgovern.view.fragments.dashboard.ZMappingFieldTable" type="XML"/>		
-
                     </VBox>
                 </content>
             </IconTabFilter>

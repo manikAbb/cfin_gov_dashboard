@@ -22,11 +22,11 @@
                         <smartTable:customToolbar>
                             <Toolbar design="Transparent" >
                                 <ToolbarSpacer />
-                                <Button text="{i18n>modifyAttachments}" type="Emphasized" press="onAttachUpload" enabled="false" />
-                                <Button text="{i18n>sndApproval}" type="Emphasized" press="onApproval" enabled="false" />
+                                <Button text="{i18n>xtit.ModifyAttachments}" type="Emphasized" press="onAttachUpload" enabled="true" />
+                                <Button text="{i18n>xtit.SendForApproval}" type="Emphasized" press="onPressSendForApproval" enabled="true" />
                             </Toolbar>
                         </smartTable:customToolbar>
-                        <Table  class="sapUiTinyMarginTop" mode="None" selectionChange="onItemSelect" growing="true" growingScrollToLoad="true" updateFinished="onTableCheckBoxEnable" sticky="ColumnHeaders,HeaderToolbar" selectAll="onSelectAll">
+                        <Table id="idMappingTable"  class="sapUiTinyMarginTop" mode="None" selectionChange="onItemSelect" growing="true" growingScrollToLoad="true" updateFinished="onTableCheckBoxEnable" sticky="ColumnHeaders,HeaderToolbar" selectAll="onSelectAll">
                             <columns>
                                 <Column>
                                     <customData>
