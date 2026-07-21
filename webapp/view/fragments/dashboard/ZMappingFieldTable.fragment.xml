@@ -52,6 +52,12 @@
                                     </customData>
                                     <Text text="{i18n>xtit.ReasonCode}"/>
                                 </Column>
+                                <Column >
+                                    <customData>
+                                        <core:CustomData key="p13nData" value='\{"columnKey": "actions", "autoColumnWidth": true, "columnIndex":"5"}' />
+                                    </customData>
+                                    <Text text="{i18n>xtit.Actions}"/>
+                                </Column>
                            
                             </columns>
                             <items>
@@ -67,6 +73,9 @@
                                         </cells>
                                         <cells>
                                             <Text text="{ReasonCode}" />
+                                        </cells>
+                                        <cells>
+                                            <Text  />
                                         </cells>
                                        
                                 </ColumnListItem>
