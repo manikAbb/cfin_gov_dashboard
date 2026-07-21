@@ -38,10 +38,51 @@ sap.ui.define([
             var oTable = this._oView.byId("idMappingTable"),
                 oSelectedItems = oTable.getSelectedItems();
             if(oSelectedItems.length > 0){  
-                MessageToast.show(this._oResourceBundle.getText("xmsg.Message2"));
+                MessageBox.confirm(this._oResourceBundle.getText("xmsg.Message7"), {
+                    onClose: function(oAction) {
+                        if (oAction === MessageBox.Action.OK) {
+                            this._sendMultipleRequestForApproval(oSelectedItems);
+                        }
+                    }
+                });
             }else{
                 MessageBox.error(this._oResourceBundle.getText("xmsg.Message1"));
             }
+        },
+        _sendMultipleRequestForApproval:function(oSelectedItems){ 
+             BusyIndicator.show(0);  
+            var aArray = [],oPayloadObj={};
+            for (var x in oSelectedItems) {
+                var oSelectedObj = oSelectedItems[x].getBindingContext().getObject();
+                oPayloadObj = {
+                    "Zrule": oSelectedObj.Zrule,
+                    "Bukrs": oSelectedObj.Bukrs,
+                    "Partner": oSelectedObj.Partner,
+                    "ReasonCode": oSelectedObj.ReasonCode,
+                    "Vkorg": oSelectedObj.Vkorg,
+                    "Vkbur": oSelectedObj.Vkbur,
+                    "Prctr": oSelectedObj.Prctr,
+                    "Pcgrp": oSelectedObj.Pcgrp,
+                    "Spart": oSelectedObj.Spart,
+                    "Gsber": oSelectedObj.Gsber,
+                    "Status": "APPROVED" 
+                }
+                aArray.push(oPayloadObj);
+            }       
+            var oPayload = {
+                "Request_header": aArray
+            };
+            this._oDataModel.create("/Myrequest_DetSet", oPayload, {
+                success: function(oData, oResponse){
+                    MessageToast.show(this._oResourceBundle.getText("xmsg.Message3"));
+                    this._refreshTable()
+                    BusyIndicator.hide();
+                }.bind(this),
+                error: function(oError){
+                    MessageBox.error(oError.message);
+                    BusyIndicator.hide();
+                }.bind(this),
+            });
         },
         onPressApprove: function(oEvent){
             var oSelectedItem = oEvent.getSource().getBindingContext().getObject();
