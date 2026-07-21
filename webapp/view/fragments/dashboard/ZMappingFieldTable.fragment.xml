@@ -1,8 +1,8 @@
 <core:FragmentDefinition xmlns:html="http://www.w3.org/1999/xhtml" xmlns:smartTable="sap.ui.comp.smarttable" xmlns:smartForm="sap.ui.comp.smartform" xmlns:smartField="sap.ui.comp.smartfield" xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns="sap.m" xmlns:core="sap.ui.core">
    
-<Panel headerText="{i18n>xtit.MappingField}" class="sapUiSmallMarginTop" expandable="true" expanded="true">
+<Panel headerText="{i18n>xtit.DisputeProcessorMapping}" class="sapUiSmallMarginTop" expandable="true" expanded="true">
 
-                        <smartTable:SmartTable
+                    <smartTable:SmartTable
                         entitySet="Myrequest_DetSet"
                         smartFilterId=""
                         useExportToExcel="true"
@@ -17,7 +17,7 @@
                         useVariantManagement="true"
                         enableAutoBinding="true"
                         persistencyKey="badDebtTablePersKey"
-                       
+                        requestAtLeastFields="Vkorg,Vkbur,Prctr,Pcgrp,Spart,Gsber"
                     >
                         <smartTable:customToolbar>
                             <Toolbar design="Transparent" >
@@ -26,7 +26,7 @@
                                 <Button text="{i18n>xtit.SendForApproval}" type="Emphasized" press="onPressSendForApproval" enabled="true" />
                             </Toolbar>
                         </smartTable:customToolbar>
-                        <Table id="idMappingTable"  class="sapUiTinyMarginTop" mode="None" selectionChange="onItemSelect" growing="true" growingScrollToLoad="true" updateFinished="onTableCheckBoxEnable" sticky="ColumnHeaders,HeaderToolbar" selectAll="onSelectAll">
+                        <Table id="idMappingTable"  class="sapUiTinyMarginTop" mode="Multiple" selectionChange="onItemSelect" growing="true" growingScrollToLoad="true" updateFinished="onTableCheckBoxEnable" sticky="ColumnHeaders,HeaderToolbar" selectAll="onSelectAll">
                             <columns>
                                 <Column>
                                     <customData>
@@ -61,7 +61,7 @@
                            
                             </columns>
                             <items>
-                                <ColumnListItem  vAlign="Middle">
+                                <ColumnListItem  >
                                         <cells>
                                             <Text  text="{Zrule}" />
                                         </cells>
@@ -75,7 +75,10 @@
                                             <Text text="{ReasonCode}" />
                                         </cells>
                                         <cells>
-                                            <Text  />
+                                            <HBox justifyContent="SpaceBetween" alignItems="Center">
+                                                <Button icon="sap-icon://accept" type="Accept" press="onPressApprove" />
+                                                <Button icon="sap-icon://cancel" type="Reject" press="onPressReject" />
+                                            </HBox>
                                         </cells>
                                        
                                 </ColumnListItem>

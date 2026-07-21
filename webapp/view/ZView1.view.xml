@@ -12,7 +12,9 @@
 			<IconTabFilter
 				icon="sap-icon://home"
 				text="{i18n>xtit.Dashboard}"
-				key="0" >
+				key="0" 
+				count="{oMainModel>/aCountReq}"
+			>
                 <content>
                     <VBox class="sapUiSmallMargin">
 						 <core:Fragment fragmentName="cfin.custom.zblocklistgovern.view.fragments.dashboard.ZMappingFieldTable" type="XML"/>		
@@ -21,16 +23,31 @@
             </IconTabFilter>
 
 			<IconTabFilter
-				icon="sap-icon://request"
-				text="{i18n>xtit.MyRequests}"
+				icon="sap-icon://checklist"
+				text="{i18n>xtit.ApprovedRequest}"
 				key="1" 
-				visible="false">
+				count="{oMainModel>/aCountApprovedReq}"
+				>
 				<content>
 					  <VBox class="sapUiSmallMargin">
-					  	  <core:Fragment fragmentName="cfin.custom.zblocklistgovern.view.fragments.myrequests.ZFilterbar" type="XML"/>	
+					   <Text text=" " />
+					  	  <!--<core:Fragment fragmentName="cfin.custom.zblocklistgovern.view.fragments.myrequests.ZFilterbar" type="XML"/>	
                   		  <core:Fragment fragmentName="cfin.custom.zblocklistgovern.view.fragments.myrequests.ZRefreshDashboard" type="XML"/>	
-						  <core:Fragment fragmentName="cfin.custom.zblocklistgovern.view.fragments.myrequests.ZMyRequestsTable" type="XML"/>	
+						  <core:Fragment fragmentName="cfin.custom.zblocklistgovern.view.fragments.myrequests.ZMyRequestsTable" type="XML"/>	-->
                     </VBox>
+					
+				</content>
+			</IconTabFilter>
+			<IconTabFilter
+				icon="sap-icon://cancel"
+				text="{i18n>xtit.RejectedRequest}"
+				key="2" 
+				count="{oMainModel>/aCountRejectReq}"
+				>
+				<content>
+					  <VBox class="sapUiSmallMargin">
+					  	 <Text text=" " />
+					</VBox>
 					
 				</content>
 			</IconTabFilter>
