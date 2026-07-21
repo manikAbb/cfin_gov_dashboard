@@ -23,8 +23,8 @@
                         <smartTable:customToolbar>
                             <Toolbar design="Transparent" >
                                 <ToolbarSpacer />
-                                <Button text="{i18n>xtit.ModifyAttachments}" type="Emphasized" press="onAttachUpload" enabled="true" />
-                                <Button text="{i18n>xtit.SendForApproval}" type="Emphasized" press="onPressSendForApproval" enabled="true" />
+                                <Button icon="sap-icon://attachment" text="{i18n>xtit.ModifyAttachments}" type="Emphasized" press="onAttachUpload" enabled="true" />
+                                <Button icon="sap-icon://validate" text="{i18n>xtit.SendForApproval}" type="Emphasized" press="onPressSendForApproval" enabled="true" />
                             </Toolbar>
                         </smartTable:customToolbar>
                         <Table id="idMappingTable"  class="sapUiTinyMarginTop" mode="Multiple" selectionChange="onItemSelect" growing="true" growingScrollToLoad="true" updateFinished="onTableCheckBoxEnable" sticky="ColumnHeaders,HeaderToolbar" selectAll="onSelectAll">
