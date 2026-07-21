@@ -7,6 +7,7 @@
 		id="idIconTabBar"
 		select=".onFilterSelect"
 		expandable="false"
+		expanded="true"
 		class="sapUiResponsiveContentPadding">
 		<items>
 			<IconTabFilter

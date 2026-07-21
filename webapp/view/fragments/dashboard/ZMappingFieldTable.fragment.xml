@@ -3,6 +3,7 @@
 <Panel headerText="{i18n>xtit.DisputeProcessorMapping}" class="sapUiSmallMarginTop" expandable="true" expanded="true">
 
                     <smartTable:SmartTable
+                        id="idMappingSmartTable"
                         entitySet="Myrequest_DetSet"
                         smartFilterId=""
                         useExportToExcel="true"

@@ -40,11 +40,24 @@ sap.ui.define([
         },
         onPressApprove: function(oEvent){
             var oSelectedItem = oEvent.getSource().getBindingContext().getObject();
-            this._onApproveReject(oSelectedItem,"APPROVED");
+            MessageBox.confirm(this._oResourceBundle.getText("xmsg.Message5"), {
+                onClose: function(oAction) {
+                    if (oAction === MessageBox.Action.OK) {
+                        this._onApproveReject(oSelectedItem,"APPROVED");
+                    }
+                }.bind(this)
+            });
+            //
         },
         onPressReject: function(oEvent){
             var oSelectedItem = oEvent.getSource().getBindingContext().getObject();
-            this._onApproveReject(oSelectedItem,"REJECTED");
+            MessageBox.confirm(this._oResourceBundle.getText("xmsg.Message6"), {
+                onClose: function(oAction) {
+                    if (oAction === MessageBox.Action.OK) {
+                        this._onApproveReject(oSelectedItem,"REJECTED");
+                    }
+                }.bind(this)
+            });
         },
         _onApproveReject:function(oBject, pStatus){
              var oPayload = {
@@ -58,11 +71,13 @@ sap.ui.define([
                 "Pcgrp": oBject.Pcgrp,
                 "Spart": oBject.Spart,
                 "Gsber": oBject.Gsber,
+                "Status": pStatus
             };
             BusyIndicator.show(0);
             this._oDataModel.create("/Myrequest_DetSet", oPayload, {
                 success: function(oData, oResponse){
                     MessageToast.show(this._oResourceBundle.getText("xmsg.Message3"));
+                    this._refreshTable()
                     BusyIndicator.hide();
                 }.bind(this),
                 error: function(oError){
@@ -71,5 +86,9 @@ sap.ui.define([
                 }.bind(this),
             });
         },
+        _refreshTable:function(){
+            this._oView.byId("idMappingSmartTable").rebindTable();
+            this._oView.byId("idMappingTable").removeSelections(true);
+        }
     });
 });
