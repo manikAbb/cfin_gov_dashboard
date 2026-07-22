@@ -55,6 +55,9 @@ sap.ui.define([
             for (var x in oSelectedItems) {
                 var oSelectedObj = oSelectedItems[x].getBindingContext().getObject();
                 oPayloadObj = {
+                    "Approver":oSelectedObj.Approver,
+                    "ApprovedOn":oSelectedObj.ApprovedOn,
+                    "ApprovedAt":oSelectedObj.ApprovedAt,
                     "Zrule": oSelectedObj.Zrule,
                     "Bukrs": oSelectedObj.Bukrs,
                     "Partner": oSelectedObj.Partner,
@@ -65,6 +68,10 @@ sap.ui.define([
                     "Pcgrp": oSelectedObj.Pcgrp,
                     "Spart": oSelectedObj.Spart,
                     "Gsber": oSelectedObj.Gsber,
+                    "CreatedOn": oSelectedObj.CreatedOn,
+                    "CreatedAt": oSelectedObj.CreatedAt,
+                    "ChangedOn": oSelectedObj.ChangedOn,
+                    "ChangedAt": oSelectedObj.ChangedAt,
                     "Status": "APPROVED" 
                 }
                 aArray.push(oPayloadObj);
@@ -107,6 +114,9 @@ sap.ui.define([
         },
         _onApproveReject:function(oBject, pStatus){
              var oPayload = {
+                "Approver":oBject.Approver,
+                "ApprovedOn":oBject.ApprovedOn,
+                "ApprovedAt":oBject.ApprovedAt,
                 "Zrule": oBject.Zrule,
                 "Bukrs": oBject.Bukrs,
                 "Partner": oBject.Partner,
@@ -117,6 +127,10 @@ sap.ui.define([
                 "Pcgrp": oBject.Pcgrp,
                 "Spart": oBject.Spart,
                 "Gsber": oBject.Gsber,
+                "CreatedOn": oBject.CreatedOn,
+                "CreatedAt": oBject.CreatedAt,
+                "ChangedOn": oBject.ChangedOn,
+                "ChangedAt": oBject.ChangedAt,
                 "Status": pStatus
             };
             BusyIndicator.show(0);
