@@ -93,7 +93,12 @@ sap.ui.define([
                 aArray.push(oPayloadObj);
             }       
             var oPayload = {
-                "Request_header": aArray
+                "Request_header": {
+                "Approved_time":"",
+                "Approved_Date":"",
+                "Approver_ID":"",
+                    "Myrequest_DetSet01": aArray
+                }
             };
             this._oDataModel.create("/Myrequest_DetSet", oPayload, {
                 success: function(oData, oResponse){
