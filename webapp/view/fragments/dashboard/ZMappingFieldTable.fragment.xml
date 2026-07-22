@@ -23,8 +23,8 @@
                         <smartTable:customToolbar>
                             <Toolbar design="Transparent" >
                                 <ToolbarSpacer />
-                                <Button icon="sap-icon://validate" text="{i18n>xtit.SendForApproval}" type="Emphasized" press="onPressMultiApproval" enabled="true" />
-                                <Button icon="sap-icon://cancel" text="{i18n>xtit.SendForReject}" type="Emphasized" press="onPressMultiReject" enabled="true" />
+                                <Button icon="sap-icon://validate" tooltip="{i18n>xtit.Approve}" text="{i18n>xtit.Approve}" type="Emphasized" press="onPressMultiApproval" enabled="true" />
+                                <Button icon="sap-icon://cancel" tooltip="{i18n>xtit.Reject}" text="{i18n>xtit.Reject}" type="Emphasized" press="onPressMultiReject" enabled="true" />
                             </Toolbar>
                         </smartTable:customToolbar>
                         <Table id="idMappingTable"  class="sapUiTinyMarginTop" mode="MultiSelect" selectionChange="onItemSelect" growing="true" growingScrollToLoad="true" updateFinished="onTableCheckBoxEnable" sticky="ColumnHeaders,HeaderToolbar" selectAll="onSelectAll">
@@ -89,8 +89,8 @@
                                         </cells>
                                         <cells>
                                             <HBox justifyContent="Start" alignItems="Center" class="sapUiTinyMarginBegin">
-                                                <Button icon="sap-icon://accept" type="Accept" press="onPressApprove" />
-                                                <Button icon="sap-icon://cancel" type="Reject" press="onPressReject" class="sapUiTinyMarginBegin"/>
+                                                <Button icon="sap-icon://accept" type="Accept" press="onPressApprove" tooltip="{i18n>xtit.Approve}" />
+                                                <Button icon="sap-icon://cancel" type="Reject" press="onPressReject" tooltip="{i18n>xtit.Reject}" class="sapUiTinyMarginBegin"/>
                                             </HBox>
                                         </cells>
                                        

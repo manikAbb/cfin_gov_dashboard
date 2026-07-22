@@ -43,7 +43,7 @@ sap.ui.define([
                         if (oAction === MessageBox.Action.OK) {
                             this._sendMultipleRequestForApproval(oSelectedItems,"APPROVED");
                         }
-                    }
+                    }.bind(this)
                 });
             }else{
                 MessageBox.error(this._oResourceBundle.getText("xmsg.Message1"));
@@ -58,7 +58,7 @@ sap.ui.define([
                         if (oAction === MessageBox.Action.OK) {
                             this._sendMultipleRequestForApproval(oSelectedItems,"REJECTED");
                         }
-                    }
+                    }.bind(this)
                 });
             }else{
                 MessageBox.error(this._oResourceBundle.getText("xmsg.Message1"));
