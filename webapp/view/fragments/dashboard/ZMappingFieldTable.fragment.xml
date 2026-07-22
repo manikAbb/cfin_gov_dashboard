@@ -18,7 +18,7 @@
                         useVariantManagement="true"
                         enableAutoBinding="true"
                         persistencyKey="badDebtTablePersKey"
-                        requestAtLeastFields="Vkorg,Vkbur,Prctr,Pcgrp,Spart,Gsber"
+                        requestAtLeastFields="Vkorg,Vkbur,Prctr,Pcgrp,Spart,Gsber,Status,Bukrs,Approver,ApprovedOn,ApprovedAt,Partner,ReasonCode,CreatedAt,ChangedTime"
                     >
                         <smartTable:customToolbar>
                             <Toolbar design="Transparent" >
@@ -30,34 +30,36 @@
                             <columns>
                                 <Column>
                                     <customData>
-                                        <core:CustomData key="p13nData" value='\{"columnKey": "Zrule","columnIndex":"1", "autoColumnWidth":"Zrule", "leadingProperty": "Zrule", "sortProperty": "Zrule", "filterProperty": "Zrule"}' />
+                                        <core:CustomData key="p13nData" value='\{"columnKey": "Zrule","columnIndex":"0", "autoColumnWidth":"Zrule", "leadingProperty": "Zrule", "sortProperty": "Zrule", "filterProperty": "Zrule"}' />
                                     </customData>
                                    <Text text="{i18n>xtit.Zrule}"/>
                                 </Column>
-                                <Column >
-                                    <customData>
-                                        <core:CustomData key="p13nData" value='\{"columnKey": "Bukrs", "autoColumnWidth": true, "columnIndex":"2",  "leadingProperty": "Bukrs", "sortProperty": "Bukrs", "filterProperty": "Bukrs"}' />
-                                    </customData>
-                                    <Text text="{i18n>xtit.Bukrs}"/>
-                                </Column>
                                  <Column >
                                     <customData>
-                                        <core:CustomData key="p13nData" value='\{"columnKey": "Partner", "autoColumnWidth": true, "columnIndex":"3",  "leadingProperty": "Partner", "sortProperty": "Partner", "filterProperty": "Partner"}' />
+                                        <core:CustomData key="p13nData" value='\{"columnKey": "OldProcessor", "autoColumnWidth": true, "columnIndex":"1",  "leadingProperty": "OldProcessor", "sortProperty": "OldProcessor", "filterProperty": "OldProcessor"}' />
                                     </customData>
-                                    <Text text="{i18n>xtit.Partner}"/>
-                                </Column>
-                               <Column >
-                                    <customData>
-                                        <core:CustomData key="p13nData" value='\{"columnKey": "ReasonCode", "autoColumnWidth": true, "columnIndex":"4",  "leadingProperty": "ReasonCode", "sortProperty": "ReasonCode", "filterProperty": "ReasonCode"}' />
-                                    </customData>
-                                    <Text text="{i18n>xtit.ReasonCode}"/>
+                                    <Text text="{i18n>xtit.OldProcessor}"/>
                                 </Column>
                                 <Column >
                                     <customData>
-                                        <core:CustomData key="p13nData" value='\{"columnKey": "actions", "autoColumnWidth": true, "columnIndex":"5"}' />
+                                        <core:CustomData key="p13nData" value='\{"columnKey": "Processor", "autoColumnWidth": true, "columnIndex":"2",  "leadingProperty": "Processor", "sortProperty": "Processor", "filterProperty": "Processor"}' />
                                     </customData>
-                                    <Text text="{i18n>xtit.Actions}"/>
+                                    <Text text="{i18n>xtit.Processor}"/>
                                 </Column>
+                                
+                               <Column >
+                                    <customData>
+                                        <core:CustomData key="p13nData" value='\{"columnKey": "CreatedOn", "autoColumnWidth": true, "columnIndex":"3",  "leadingProperty": "CreatedOn", "sortProperty": "CreatedOn", "filterProperty": "CreatedOn"}' />
+                                    </customData>
+                                    <Text text="{i18n>xtit.CreatedOn}"/>
+                                </Column>
+                                  <Column >
+                                    <customData>
+                                        <core:CustomData key="p13nData" value='\{"columnKey": "ChangedOn", "autoColumnWidth": true, "columnIndex":"4",  "leadingProperty": "ChangedOn", "sortProperty": "CreatedOn", "filterProperty": "ChangedOn"}' />
+                                    </customData>
+                                    <Text text="{i18n>xtit.ChangedOn}"/>
+                                </Column>
+                                
                            
                             </columns>
                             <items>
@@ -65,14 +67,15 @@
                                         <cells>
                                             <Text  text="{Zrule}" />
                                         </cells>
-                                        <cells>
-                                            <Text  text="{Bukrs}" />
+                                         <cells>
+                                         <Text text="{OldProcessor}" />
                                         </cells>
                                         <cells>
-                                         <Text text="{Partner}" />
+                                            <Text  text="{CreatedOn}" />
                                         </cells>
+                                       
                                         <cells>
-                                            <Text text="{ReasonCode}" />
+                                            <Text text="{ChangedOn}" />
                                         </cells>
                                         <cells>
                                             <HBox justifyContent="SpaceBetween" alignItems="Center">
