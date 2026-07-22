@@ -87,6 +87,7 @@ sap.ui.define([
                     "CreatedAt": oSelectedObj.CreatedAt,
                     "ChangedOn": oSelectedObj.ChangedOn,
                     "ChangedAt": oSelectedObj.ChangedAt,
+                    "ChangedTime":oSelectedObj.ChangedTime,
                     "Status": sStatus 
                 }
                 aArray.push(oPayloadObj);
@@ -145,6 +146,7 @@ sap.ui.define([
                 "CreatedAt": oBject.CreatedAt,
                 "ChangedOn": oBject.ChangedOn,
                 "ChangedAt": oBject.ChangedAt,
+                "ChangedTime":oBject.ChangedTime,
                 "Status": pStatus
             };
             BusyIndicator.show(0);

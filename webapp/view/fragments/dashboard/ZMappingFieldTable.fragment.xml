@@ -88,9 +88,9 @@
                                             <Text text="{ChangedOn}" />
                                         </cells>
                                         <cells>
-                                            <HBox justifyContent="SpaceBetween" alignItems="Center">
+                                            <HBox justifyContent="Start" alignItems="Center" class="sapUiTinyMarginBegin">
                                                 <Button icon="sap-icon://accept" type="Accept" press="onPressApprove" />
-                                                <Button icon="sap-icon://cancel" type="Reject" press="onPressReject" />
+                                                <Button icon="sap-icon://cancel" type="Reject" press="onPressReject" class="sapUiTinyMarginBegin"/>
                                             </HBox>
                                         </cells>
                                        
