@@ -23,7 +23,8 @@
                         <smartTable:customToolbar>
                             <Toolbar design="Transparent" >
                                 <ToolbarSpacer />
-                                <Button icon="sap-icon://validate" text="{i18n>xtit.SendForApproval}" type="Emphasized" press="onPressSendForApproval" enabled="true" />
+                                <Button icon="sap-icon://validate" text="{i18n>xtit.SendForApproval}" type="Emphasized" press="onPressMultiApproval" enabled="true" />
+                                <Button icon="sap-icon://cancel" text="{i18n>xtit.SendForReject}" type="Emphasized" press="onPressMultiReject" enabled="true" />
                             </Toolbar>
                         </smartTable:customToolbar>
                         <Table id="idMappingTable"  class="sapUiTinyMarginTop" mode="MultiSelect" selectionChange="onItemSelect" growing="true" growingScrollToLoad="true" updateFinished="onTableCheckBoxEnable" sticky="ColumnHeaders,HeaderToolbar" selectAll="onSelectAll">
@@ -59,6 +60,12 @@
                                     </customData>
                                     <Text text="{i18n>xtit.ChangedOn}"/>
                                 </Column>
+                                 <Column >
+                                    <customData>
+                                        <core:CustomData key="p13nData" value='\{"columnKey": "Actions", "autoColumnWidth": true, "columnIndex":"5"}' />
+                                    </customData>
+                                    <Text text="{i18n>xtit.Actions}"/>
+                                </Column>
                                 
                            
                             </columns>
@@ -69,6 +76,9 @@
                                         </cells>
                                          <cells>
                                          <Text text="{OldProcessor}" />
+                                        </cells>
+                                        <cells>
+                                         <Text text="{Processor}" />
                                         </cells>
                                         <cells>
                                             <Text  text="{CreatedOn}" />

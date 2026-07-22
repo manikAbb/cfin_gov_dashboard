@@ -34,14 +34,14 @@ sap.ui.define([
                 }
             });
         },
-        onPressSendForApproval:function(oEvent){
+        onPressMultiApproval:function(oEvent){
             var oTable = this._oView.byId("idMappingTable"),
                 oSelectedItems = oTable.getSelectedItems();
             if(oSelectedItems.length > 0){  
                 MessageBox.confirm(this._oResourceBundle.getText("xmsg.Message7"), {
                     onClose: function(oAction) {
                         if (oAction === MessageBox.Action.OK) {
-                            this._sendMultipleRequestForApproval(oSelectedItems);
+                            this._sendMultipleRequestForApproval(oSelectedItems,"APPROVED");
                         }
                     }
                 });
@@ -49,7 +49,22 @@ sap.ui.define([
                 MessageBox.error(this._oResourceBundle.getText("xmsg.Message1"));
             }
         },
-        _sendMultipleRequestForApproval:function(oSelectedItems){ 
+        onPressMultiReject:function(oEvent){
+            var oTable = this._oView.byId("idMappingTable"),
+                oSelectedItems = oTable.getSelectedItems();
+            if(oSelectedItems.length > 0){  
+                MessageBox.confirm(this._oResourceBundle.getText("xmsg.Message9"), {
+                    onClose: function(oAction) {
+                        if (oAction === MessageBox.Action.OK) {
+                            this._sendMultipleRequestForApproval(oSelectedItems,"REJECTED");
+                        }
+                    }
+                });
+            }else{
+                MessageBox.error(this._oResourceBundle.getText("xmsg.Message1"));
+            }
+        },
+        _sendMultipleRequestForApproval:function(oSelectedItems, sStatus){ 
              BusyIndicator.show(0);  
             var aArray = [],oPayloadObj={};
             for (var x in oSelectedItems) {
@@ -72,7 +87,7 @@ sap.ui.define([
                     "CreatedAt": oSelectedObj.CreatedAt,
                     "ChangedOn": oSelectedObj.ChangedOn,
                     "ChangedAt": oSelectedObj.ChangedAt,
-                    "Status": "APPROVED" 
+                    "Status": sStatus 
                 }
                 aArray.push(oPayloadObj);
             }       
@@ -100,7 +115,6 @@ sap.ui.define([
                     }
                 }.bind(this)
             });
-            //
         },
         onPressReject: function(oEvent){
             var oSelectedItem = oEvent.getSource().getBindingContext().getObject();
