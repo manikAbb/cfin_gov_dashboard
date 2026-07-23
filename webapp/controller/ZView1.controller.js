@@ -17,7 +17,6 @@ sap.ui.define([
 
         },
         _onRouteMatched:function(){
-            console.log("Route Matched");
             this._GetIcnTbBarCount();
         },
         _GetIcnTbBarCount:function(){
