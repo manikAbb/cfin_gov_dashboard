@@ -18,6 +18,7 @@
                         useVariantManagement="true"
                         enableAutoBinding="true"
                         persistencyKey="badDebtTablePersKey"
+                        ignorefromPersonalization="Message,MessageType"
                         requestAtLeastFields="Vkorg,Vkbur,Prctr,Pcgrp,Spart,Gsber,Status,Bukrs,Approver,ApprovedOn,ApprovedAt,Partner,ReasonCode,CreatedAt,ChangedTime"
                     >
                         <smartTable:customToolbar>
@@ -81,11 +82,11 @@
                                          <Text text="{Processor}" />
                                         </cells>
                                         <cells>
-                                            <Text  text="{CreatedOn}" />
+                                             <Text text="{path:'CreatedOn',type:'sap.ui.model.odata.type.DateTime',formatOptions:{pattern:'dd/MM/YYYY'}}" wrapping="false"/>
                                         </cells>
                                        
                                         <cells>
-                                            <Text text="{ChangedOn}" />
+                                             <Text text="{path:'ChangedOn',type:'sap.ui.model.odata.type.DateTime',formatOptions:{pattern:'dd/MM/YYYY'}}" wrapping="false"/>
                                         </cells>
                                         <cells>
                                             <HBox justifyContent="Start" alignItems="Center" class="sapUiTinyMarginBegin">

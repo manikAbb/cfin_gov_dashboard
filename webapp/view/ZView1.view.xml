@@ -12,7 +12,7 @@
 		<items>
 			<IconTabFilter
 				icon="sap-icon://home"
-				text="{i18n>xtit.Dashboard}"
+				text="{i18n>xtit.TotalRquests}"
 				key="0" 
 				count="{oMainModel>/aCountReq}"
 			>
