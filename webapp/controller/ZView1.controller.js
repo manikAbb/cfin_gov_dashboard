@@ -87,7 +87,7 @@ sap.ui.define([
                     "Gsber": oSelectedObj.Gsber,
                     "CreatedOn": oSelectedObj.CreatedOn,
                     "CreatedAt": oSelectedObj.CreatedAt,
-                    "ChangedOn":  oSelectedObj.ChangedOn ? oBject.ChangedOn : null,
+                    "ChangedOn":  oSelectedObj.ChangedOn ? oSelectedObj.ChangedOn : null,
                     "ChangedAt": oSelectedObj.ChangedAt,
                     "ChangedTime":oSelectedObj.ChangedTime,
                     "Status": sStatus 
