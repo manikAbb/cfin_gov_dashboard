@@ -93,14 +93,12 @@ sap.ui.define([
                 aArray.push(oPayloadObj);
             }       
             var oPayload = {
-                "Request_header": {
-                "Approved_time":"",
-                "Approved_Date":"",
-                "Approver_ID":"",
-                    "Myrequest_DetSet01": aArray
-                }
+                "Approver":"",
+                "ApprovedOn":"",
+                "ApprovedAt":"",
+                "Approved_Items": aArray
             };
-            this._oDataModel.create("/Myrequest_DetSet", oPayload, {
+            this._oDataModel.create("/Request_headerSet", oPayload, {
                 success: function(oData, oResponse){
                     MessageToast.show(this._oResourceBundle.getText("xmsg.Message3"));
                     this._refreshTable()
