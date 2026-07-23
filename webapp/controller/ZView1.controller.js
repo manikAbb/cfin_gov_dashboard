@@ -18,6 +18,9 @@ sap.ui.define([
         },
         _onRouteMatched:function(){
             console.log("Route Matched");
+            this._GetIcnTbBarCount();
+        },
+        _GetIcnTbBarCount:function(){
             BusyIndicator.show(0);
             this._oDataModel.read("/myrequest_CountSet", {
                 success: function(oData, oResponse){
@@ -85,7 +88,7 @@ sap.ui.define([
                     "Gsber": oSelectedObj.Gsber,
                     "CreatedOn": oSelectedObj.CreatedOn,
                     "CreatedAt": oSelectedObj.CreatedAt,
-                    "ChangedOn": oSelectedObj.ChangedOn,
+                    "ChangedOn": null,
                     "ChangedAt": oSelectedObj.ChangedAt,
                     "ChangedTime":oSelectedObj.ChangedTime,
                     "Status": sStatus 
@@ -103,6 +106,7 @@ sap.ui.define([
                     MessageToast.show(this._oResourceBundle.getText("xmsg.Message3"));
                     this._refreshTable()
                     BusyIndicator.hide();
+                    this._GetIcnTbBarCount();
                 }.bind(this),
                 error: function(oError){
                     MessageBox.error(oError.message);
@@ -147,7 +151,7 @@ sap.ui.define([
                 "Gsber": oBject.Gsber,
                 "CreatedOn": oBject.CreatedOn,
                 "CreatedAt": oBject.CreatedAt,
-                "ChangedOn": oBject.ChangedOn,
+                "ChangedOn": null,
                 "ChangedAt": oBject.ChangedAt,
                 "ChangedTime":oBject.ChangedTime,
                 "Status": pStatus
@@ -158,6 +162,7 @@ sap.ui.define([
                     MessageToast.show(this._oResourceBundle.getText("xmsg.Message3"));
                     this._refreshTable()
                     BusyIndicator.hide();
+                    this._GetIcnTbBarCount();
                 }.bind(this),
                 error: function(oError){
                     MessageBox.error(oError.message);
